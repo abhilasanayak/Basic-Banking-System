@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block body_block %}
+
+<h1 style="margin-top: 25px;">Transfer money from one account to other</h1>
+<br><br>
+<div class="container" style="margin-bottom: 314px;">
+  <form method="POST">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="account_number_1" class="form-label">Sender Account Number</label>
+        <input type="number" class="form-control" id="account_number_1" name="account_number_1" required>
+      </div>
+      <div class="mb-3">
+        <label for="account_number_2" class="form-label">Receiver Account Number</label>
+        <input type="number" class="form-control" id="account_number_2" name="account_number_2" required>
+      </div>
+      <input type="submit" value="Next" class="btn btn-dark" style="margin-left: 45%; margin-right: 45%; width:100px; margin-top: 15px;">
+  </form>
+</div>
+
+{% if message %}
+
+  <script>
+    alert('{{ message }}');
+  </script>
+
+{% endif %}
+
+{% endblock %}

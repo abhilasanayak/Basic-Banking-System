@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block body_block %}
+{% load static %}
+
+  <style>
+     .customers{
+       text-align: center;
+       padding: 30px;
+       width: 90%;
+       margin: auto;
+     }
+     table{
+       margin: auto;
+       border: solid 2px black;
+     }
+     th, td{
+       height: 50px;
+       width: 25%;
+     }
+  </style>
+
+  <h1 style="margin-top: 25px;">Customer Database</h1>
+
+  <div class="customers" >
+    {% if customers %}
+    <table class="table">
+      <thead>
+          <tr>
+              <th scope="col">ACCOUNT NUMBER</th>
+              <th scope="col">CUSTOMER NAME</th>
+              <th scope="col">EMAIL ID</th>
+              <th scope="col">BALANCE</th>
+          </tr>
+      </thead>
+      <tbody>
+          {% for customer in customers %}
+          <tr>
+              <th scope="row">{{ customer.account_number }}</th>
+              <td>{{ customer.name }}</td>
+              <td>{{ customer.email }}</td>
+              <td>{{ customer.balance }}</td>
+          </tr>
+          {% endfor %}
+      </tbody>
+    </table>
+
+    {% else %}
+
+      <p>NO CUSTOMERS RECORDS FOUND</p>
+
+    {% endif %}
+  </div>
+
+{% endblock %}

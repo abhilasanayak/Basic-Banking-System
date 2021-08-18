@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+  {% block body_block %}
+  {% load static %}
+
+  <img src="{% static 'images/bankbackground.jpg' %}" style="height: 668px; width: 1536px;">
+
+  {% if message %}
+
+      <script>
+          alert('{{ message }}');
+      </script>
+
+  {% endif %}
+
+  {% endblock %}

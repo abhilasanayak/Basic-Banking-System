@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block body_block %}
+{% load static %}
+
+  <style>
+     .transactions{
+       text-align: center;
+       padding: 30px;
+       width: 90%;
+       margin: auto;
+     }
+     table{
+       margin: auto;
+       border: solid 2px black;
+     }
+     th, td{
+       height: 50px;
+       width: 25%;
+     }
+  </style>
+
+  <h1 style="margin-top: 25px;">Transaction Database</h1>
+
+  <div class="transactions">
+
+    {% if transactions %}
+    <table class="table">
+      <thead>
+          <tr>
+              <th scope="col">TIMESTAMP</th>
+              <th scope="col">ACCOUNT NUMBER</th>
+              <th scope="col">AMOUNT TRANSACTED</th>
+              <th scope="col">DESCRIPTION</th>
+          </tr>
+      </thead>
+      <tbody>
+          {% for transaction in transactions %}
+          <tr>
+              <th scope="row">{{ transaction.time }}</th>
+              <td>{{ transaction.account_number_id }}</td>
+              <td>{{ transaction.transacted_amount }}</td>
+              <td>{{ transaction.description }}</td>
+          </tr>
+          {% endfor %}
+      </tbody>
+    </table>
+
+    {% else %}
+
+    <p>NO TRANSACTION RECORDS FOUND</p>
+
+    {% endif %}
+
+  </div>
+
+{% endblock %}

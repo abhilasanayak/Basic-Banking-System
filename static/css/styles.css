@@ -1,0 +1,30 @@
+.nav-link {
+    font-size: 1.1rem;
+    font-family: 'DM Serif Display', serif;
+}
+
+h1 {
+    font-family: 'DM Serif Display', serif;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    background-color: #1f2329;
+    font-family: 'DM Serif Display', serif;
+    color: white;
+    padding: 20px;
+    height: 65px;
+}
+
+.footer-name {
+    color: #e3992b;
+}
+
+.footer-name:hover {
+    color: white;
+}
+
+img {
+    width: 100%;
+}
